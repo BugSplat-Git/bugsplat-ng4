@@ -88,4 +88,22 @@ describe('BugSplat', () => {
         bugsplat.addAdditionalFile(file);
         expect(spy).toHaveBeenCalledWith(expectedMessage);
     });
+
+    it('should call post with url containing database', () => {
+        // body.append("appName", this.config.appName);
+        // body.append("appVersion", this.config.appVersion);
+        // body.append("database", this.config.database);
+        // body.append("callstack", callstack);
+        // body.append("appKey", this.appKey);
+        // body.append("user", this.user);
+        // body.append("email", this.email);
+        // body.append("description", this.description);
+        throw new Error('todo bg');
+    });
+
+    describe('when error has no stack', () => {
+        it('should call post with callstack from new error', () => {
+            throw new Error('todo bg');
+        });
+    });
 });

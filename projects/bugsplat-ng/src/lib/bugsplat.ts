@@ -31,7 +31,7 @@ export class BugSplat {
 
   async post(error: Error): Promise<void> {
     const url = "https://" + this.config.database + ".bugsplat.com/post/js/";
-    const callstack = error.stack == null ? error.toString() : error.stack;
+    const callstack = error.stack ? error.stack : new Error(error.message ?? error.toString()).stack;
     const body = new FormData();
     body.append("appName", this.config.appName);
     body.append("appVersion", this.config.appVersion);
